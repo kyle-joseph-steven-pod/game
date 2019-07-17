@@ -4,9 +4,15 @@
 }
 body{
     margin:0;
-    background-color: black;
+    background: rgb(0,0,0);
 
 }
+/*#intro{*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    position: absolute;*/
+/*    opacity: unset;*/
+/*}*/
 #game-screen{
     /*margin: 0;*/
     height: 65vh;
@@ -60,13 +66,20 @@ body{
     width: 100%;
     padding: 0 15px;
 }
+#log-form-input:focus {
+    outline-width: 0;
+}
 #control-panel{
     display: inline-block;
     width:30%;
     height: 100%;
     float: right;
     border:1px solid black;
-
+}
+#startScreen{
+    position: absolute;
+    right: 134px;
+    margin-top: 15px;
 }
 #console-sprite{
     height: 80%;
