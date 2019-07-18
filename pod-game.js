@@ -2,7 +2,8 @@ $("#log-form").submit(function(e){
     e.preventDefault();
 
     //Adds text to output log, reuse as possible for dialogue
-    var pText = `<p class='output-p'><span class='output-arrow'>-></span>${$('#log-form-input').val()}</p>`;
+    var pText = '<p class="output-p"><span class="output-arrow">-></span>${$("#log-form-input").val()}</p>';
+
 
     // Trying to make it where when text is entered in the input log and 'enter' is pressed, the input automatically clears itself //
 
@@ -21,12 +22,13 @@ $("#log-form").submit(function(e){
 });
 $("#button-fight").on("click",function(){
     var dmg = characters[0].base_stats.damageDie();
-    var pText = `<p class='output-p'><span class='output-arrow'>-></span>Your attack hit, and did ${dmg} damage</p>`;
+    var pText = "<p class='output-p'><span class='output-arrow'>-></span>Your attack hit, and did ${dmg} damage</p>";
     $("#log-output").append(pText).scrollTop(9999999999999999);
 });
 $('#button-talk').on('click', function () {
-    var talk = '<p class="output-p"><span class="output-arrow">-></span>"' + charSays[Math.floor(Math.random()*charSays.length)] + '"</p>';
-    $('#log-output').append(talk).scrollTop(9999999999999999);
+    var randomPhrase = charSays[Math.floor(Math.random()*charSays.length)];
+    var pText = "<p class='output-p'><span class='output-arrow'>-></span>" + randomPhrase + "</p>";
+    $("#log-output").append(pText).scrollTop(9999999999999999);
 })
 
 //the function name pretty much explains itself here...//
