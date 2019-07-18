@@ -18,7 +18,7 @@ body{
 /*    opacity: unset;*/
 /*}*/
 #game-screen{
-    /*margin: 0;*/
+    margin: 0;
     height: 65vh;
     background: url("Pixel-Art/bg-1.jpg");
     opacity: 0.5;
@@ -36,7 +36,7 @@ body{
     height: 100%;
     background-image: url("Pixel-Art/gothic background 2.jpg");
     background-size: 716.8px 300.88px ;
-    color: white;
+    color: #515151;
     position: relative;
 }
 #log-input{
@@ -88,12 +88,14 @@ body{
 }
 #startScreen{
     position: absolute;
-    right: 50px;
+    right: 75px;
+    bottom: 205px;
     margin-top: 15px;
-    font-size: 2.0em;
+    font-size: 2.5em;
     font-family: Chromaletter-Combo;
 }
 #console-sprite{
+    top: 20px;
     height: 80%;
 }
 #con-sprite{
@@ -103,15 +105,20 @@ body{
 }
 #control-buttons{
     height:20.5%;
-    /*border: 1px solid black;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between!important;
     padding: 0 27px;
 }
 .btn-large{
-    width: 80px;
     margin-top: 4px;
-    height: 40px;
-
+    height: 50px;
+    width: 100px;
+    padding: 0px;
+    bottom: 20px;
+    font-family: Chromaletter-Combo;
+    font-size: 1.75em;
+    font-weight: lighter;
+    text-shadow: -1px 1px 1px lightgrey;
+    box-shadow: -3px 3px 4px lightgrey;
 }
