@@ -24,3 +24,22 @@ $("#button-fight").on("click",function(){
     var pText = `<p class='output-p'><span class='output-arrow'>-></span>Your attack hit, and did ${dmg} damage</p>`;
     $("#log-output").append(pText).scrollTop(9999999999999999);
 });
+
+
+//the function name pretty much explains itself here...//
+//we can use this same code to make pretty much anything flash at a set interval - maybe something to keep in mind for the Character Damage Animation?
+
+function flash() {
+    $('#startScreen').each(function () {
+        var elem = $(this);
+        setInterval(function () {
+            if (elem.css('visibility') == 'hidden') {
+                elem.css('visibility', 'visible');
+            } else {
+                elem.css('visibility', 'hidden')
+            }
+        }, 650);
+    });
+}
+
+flash();
