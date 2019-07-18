@@ -11,6 +11,11 @@ body{
     font-family: Chromaletter-Combo;
     src: url("Chromaletter_Personal_License/Chromaletter_OTF/Chromaletter-Combo.otf") format("opentype");
 }
+
+@font-face {
+    font-family: Majesti-Banner-light-italic;
+    src: url("Majesti-Banner_Personal_License/Majesti-Banner/Majesti-Banner-LightItalic.otf") format("opentype");
+}
 /*#intro{*/
 /*    color: white;*/
 /*    text-align: center;*/
@@ -26,7 +31,7 @@ body{
 }
 #console{
     height: 35vh;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     background: white;
 
 }
@@ -35,9 +40,12 @@ body{
     width:70%;
     height: 100%;
     background-image: url("Pixel-Art/gothic background 2.jpg");
-    background-size: 716.8px 300.88px ;
+    background-size: 716.8px 255px ;
     color: #515151;
-    position: relative;
+    /*position: relative;*/
+    font-family: Majesti-Banner-light-italic;
+    font-size: 1.2em;
+
 }
 #log-input{
 
@@ -46,8 +54,9 @@ body{
     height: 80%;
     max-height: 80%;
     padding-left: 7.5px;
-    padding-bottom: 0px;
+    /*padding-bottom: 0px;*/
     padding-top: 75px;
+    line-height: 1.1em;
 }
 #log-output{
     padding: 0 5px;
@@ -74,7 +83,8 @@ body{
     width: 100%;
     padding: 0 15px;
     background-color: #c6c6c6;
-    height: 1.5em;
+    height: 1.6em;
+    bottom: 300px;
 }
 #log-form-input:focus {
     outline-width: 0;
@@ -84,7 +94,7 @@ body{
     width:30%;
     height: 100%;
     float: right;
-    border:1px solid black;
+    border:5px double;
 }
 #startScreen{
     position: absolute;
@@ -102,6 +112,7 @@ body{
     height: 100%;
     display: block;
     margin: auto;
+
 }
 #control-buttons{
     height:20.5%;
@@ -112,7 +123,7 @@ body{
 }
 .btn-large{
     margin-top: 4px;
-    height: 50px;
+    height: 55px;
     width: 100px;
     padding: 0px;
     bottom: 20px;
@@ -121,4 +132,5 @@ body{
     font-weight: lighter;
     text-shadow: -1px 1px 1px lightgrey;
     box-shadow: -3px 3px 4px lightgrey;
+    border: 3px outset;
 }
