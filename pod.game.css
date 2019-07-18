@@ -11,7 +11,10 @@ body{
     font-family: Chromaletter-Combo;
     src: url("Chromaletter_Personal_License/Chromaletter_OTF/Chromaletter-Combo.otf") format("opentype");
 }
-
+@font-face {
+    font-family: Majesti-Banner-medium;
+    src: url("Majesti-Banner_Personal_License/Majesti-Banner/Majesti-Banner-Medium.otf") format("opentype");
+}
 @font-face {
     font-family: Majesti-Banner-light-italic;
     src: url("Majesti-Banner_Personal_License/Majesti-Banner/Majesti-Banner-LightItalic.otf") format("opentype");
@@ -47,9 +50,6 @@ body{
     font-size: 1.1em;
 
 }
-#log-input{
-
-}
 #log-output-div{
     height: 80%;
     max-height: 80%;
@@ -83,9 +83,11 @@ body{
     font-size: 24px;
     width: 100%;
     padding: 0 15px;
-    background-color: #c6c6c6;
+    background-color: black;
     height: 1.6em;
     bottom: 300px;
+    color: white;
+    font-family: Majesti-Banner-medium;
 }
 #log-form-input:focus {
     outline-width: 0;
