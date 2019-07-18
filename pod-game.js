@@ -24,7 +24,10 @@ $("#button-fight").on("click",function(){
     var pText = `<p class='output-p'><span class='output-arrow'>-></span>Your attack hit, and did ${dmg} damage</p>`;
     $("#log-output").append(pText).scrollTop(9999999999999999);
 });
-
+$('#button-talk').on('click', function () {
+    var talk = '<p class="output-p"><span class="output-arrow">-></span>"' + charSays[Math.floor(Math.random()*charSays.length)] + '"</p>';
+    $('#log-output').append(talk).scrollTop(9999999999999999);
+})
 
 //the function name pretty much explains itself here...//
 //we can use this same code to make pretty much anything flash at a set interval - maybe something to keep in mind for the Character Damage Animation?
