@@ -5,6 +5,7 @@
 body{
     margin:0;
     background: rgb(0,0,0);
+    /*height: 100%;*/
 
 }
 @font-face {
@@ -44,8 +45,8 @@ body{
     height: 100%;
     background-image: url("Pixel-Art/gothic background 2.jpg");
     background-size: 716.8px 255px ;
-    color: #515151;
-    /*position: relative;*/
+    color: #2a3337;
+    position: relative;
     font-family: Majesti-Banner-light-italic;
     font-size: 1.1em;
 
@@ -68,6 +69,9 @@ body{
 ::-webkit-scrollbar {
     color: transparent;
 }
+.module {
+    cursor: url("Pixel-Art/mickey-cursor.png"), none;
+}
 .output-p{
     margin: 0 0 10px 0;
 }
@@ -79,7 +83,7 @@ body{
     box-sizing: border-box;
     border: 1px solid darkgoldenrod;
     display: block;
-    line-height:49px;
+    /*line-height:49px;*/
     font-size: 24px;
     width: 100%;
     padding: 0 15px;
@@ -119,7 +123,6 @@ body{
     height: 100%;
     display: block;
     margin: auto;
-
 }
 #control-buttons{
     height:20.5%;
