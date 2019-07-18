@@ -2,10 +2,12 @@
 *{
     box-sizing: border-box;
 }
+.flash{
+    visibility: hidden;
+}
 body{
     margin:0;
     background: rgb(0,0,0);
-    /*height: 100%;*/
 
 }
 @font-face {
@@ -29,7 +31,7 @@ body{
 #game-screen{
     margin: 0;
     height: 65vh;
-    background: url("Pixel-Art/bg-1.jpg");
+    background: url("Other-Art/bg-1.jpg");
     opacity: 0.5;
     background-size: 300px;
 }
@@ -42,7 +44,7 @@ body{
     display: inline-block;
     width:70%;
     height: 100%;
-    background-image: url("Pixel-Art/gothic background 2.jpg");
+    background-image: url("Other-Art/gothic background 2.jpg");
     background-size: 716.8px 258px ;
     /*border: 3px outset;*/
     color: #2a3337;
@@ -55,13 +57,12 @@ body{
     height: 80%;
     max-height: 80%;
     padding-left: 7.5px;
-    padding-bottom: 0px;
     padding-top: 64px;
     line-height: 1.0em;
     padding-bottom: 10px;
 }
 #log-output{
-    padding: 0 0px;
+    padding: 0;
     overflow: auto;
     overflow-wrap: normal;
     max-height: 100%;
@@ -70,7 +71,7 @@ body{
     color: transparent;
 }
 .module {
-    cursor: url("Pixel-Art/mickey-cursor.png"), none;
+    cursor: url("Other-Art/mickey-cursor.png"), none;
 }
 .output-p{
     margin: 0 0 10px 0;
@@ -108,18 +109,29 @@ body{
     border-bottom-color: black;
 }
 #startScreen{
-    position: absolute;
-    right: 75px;
-    bottom: 205px;
-    margin-top: 15px;
+    /*position: absolute;*/
+    /*right: 75px;*/
+    /*bottom: 195px;*/
+    /*float: right;*/
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
     font-size: 2.5em;
     font-family: Chromaletter-Combo;
 }
+#startScreenDiv{
+    position: absolute;
+    z-index: 1;
+    width: 29%;
+}
 #console-sprite{
     top: 20px;
-    height: 80%;
+    height: 60%;
+    margin-top: 55px;
 }
 #con-sprite{
+    position: relative;
+    bottom: 15px;
     height: 100%;
     display: block;
     margin: auto;
@@ -132,15 +144,16 @@ body{
     padding: 0 27px;
 }
 .btn-large{
+    padding: 0;
     margin-top: 4px;
     height: 55px;
     width: 100px;
-    padding: 0px;
     bottom: 20px;
     font-family: Chromaletter-Combo;
     font-size: 1.75em;
     font-weight: lighter;
     text-shadow: -1px 1px 1px lightgrey;
+    text-align: center;
     box-shadow: -3px 3px 4px lightgrey;
     border: 3px outset;
 }
