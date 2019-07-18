@@ -16,6 +16,8 @@
 
 //The rest do what you think.
 
+
+// id="here" - start button?
 // id="attack"
 // id="run"
 // id="talk"
@@ -60,7 +62,7 @@ function death() {
 
 //////////////////////////////////// Attack Func
 function attackEnd() {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-attackendNormalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-attack-end-Normalized.png\')')
     setTimeout(function () {
         idle()
     }, 250) //.25 seconds
@@ -69,7 +71,7 @@ function attackEnd() {
 
 //////////////////////////////////// Running Func
 function step() {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-steppingNormalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-stepping-Normalized.png\')')
     setTimeout(function () {
         runCounter += 1;
         running()
@@ -77,9 +79,9 @@ function step() {
 }
 
 function running() {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-standingNormalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-standing-Normalized.png\')')
     setTimeout(function () {
-        $('#con-sprite').css('background-image', 'url(\'pngs/Mis-steppingNormalized.png\')');
+        $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-stepping-Normalized.png\')');
         if (runCounter >= 3) {
             runCounter = 0;
             return idle()
@@ -92,7 +94,7 @@ function running() {
 
 //////////////////////////////////// Talking Func
 function talking1() {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-Talk2-Normalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-Talk2-Normalized.png\')')
     setTimeout(function () {
         if (talkCounter >= 2) {
             talkCounter = 0;
@@ -104,7 +106,7 @@ function talking1() {
 }
 
 function talking2() {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-Talk1-Normalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-Talk1-Normalized.png\')')
     setTimeout(function () {
         talkCounter += 1;
         talking1()
@@ -116,10 +118,10 @@ function talking2() {
 
 function idle() {
     if (counter === 0) {
-        $('#con-sprite').css('background-image', 'url(\'pngs/Mis-idleNormalized.png\')');
+        $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-idle-Normalized.png\')');
         counter += 1;
     } else {
-        $('#con-sprite').css('background-image', 'url(\'pngs/Mis-standingNormalized.png\')');
+        $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-standing-Normalized.png\')');
         counter -= 1;
 
     }
@@ -135,10 +137,18 @@ function idle() {
 window.onload = function () {
     console.log(mainTimer);
 };
+////////////////////////////////////Starts idle on button press
+
+// $('#test').on('click', function () {
+//     $('#con-sprite').css('background-image', 'url(\'pngs/Mis-attackNormalized.png\')')
+//         .then($(this).off())
+//
+// });
+
 
 ////////////////////////////////////Attacking Listener
-$('#button-attack').on('click', function () {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-attackNormalized.png\')');
+$('#button-fight').on('click', function () {
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-attack-Normalized.png\')');
     setTimeout(function () {
         attackEnd()
     }, 250) //.25 seconds
@@ -147,7 +157,7 @@ $('#button-attack').on('click', function () {
 
 ////////////////////////////////////Running Listener
 $('#button-run').on('click', function () {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-steppingNormalized.png\')');
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-stepping-Normalized.png\')');
     setTimeout(function () {
         running()
     }, 250) //.25 seconds
@@ -155,7 +165,7 @@ $('#button-run').on('click', function () {
 
 ////////////////////////////////////Talking Listener
 $('#button-talk').on('click', function () {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-Talk1-Normalized.png\')');
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-Talk1-Normalized.png\')');
     setTimeout(function () {
         talking1()
     }, 250) //.25 seconds
@@ -163,7 +173,7 @@ $('#button-talk').on('click', function () {
 
 ////////////////////////////////////Damaged Listener
 $('#damaged').on('click', function () {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-injured-Normalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-injured-Normalized.png\')')
     setTimeout(function () {
         idle()
     }, 250) //.25 seconds
@@ -171,7 +181,7 @@ $('#damaged').on('click', function () {
 
 ////////////////////////////////////Dead Listener
 $('#dead').on('click', function () {
-    $('#con-sprite').css('background-image', 'url(\'pngs/Mis-skull-Normalized.png\')')
+    $('#con-sprite').css('background-image', 'url(\'pngs/Mischievous-Sprite/Mis-skull-Normalized.png\')')
     setTimeout(function () {
         death()
     }, 250) //.25 seconds
