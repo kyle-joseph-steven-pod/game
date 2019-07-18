@@ -31,7 +31,7 @@ body{
 #game-screen{
     margin: 0;
     height: 65vh;
-    background: url("Pixel-Art/bg-1.jpg");
+    background: url("Other-Art/bg-1.jpg");
     opacity: 0.5;
     background-size: 300px;
 }
@@ -44,7 +44,7 @@ body{
     display: inline-block;
     width:70%;
     height: 100%;
-    background-image: url("Pixel-Art/gothic background 2.jpg");
+    background-image: url("Other-Art/gothic background 2.jpg");
     background-size: 716.8px 258px ;
     /*border: 3px outset;*/
     color: #2a3337;
@@ -71,7 +71,7 @@ body{
     color: transparent;
 }
 .module {
-    cursor: url("Pixel-Art/mickey-cursor.png"), none;
+    cursor: url("Other-Art/mickey-cursor.png"), none;
 }
 .output-p{
     margin: 0 0 10px 0;
@@ -131,8 +131,8 @@ body{
 }
 #con-sprite{
     position: relative;
-    bottom: 50px;
-    height: 150%;
+    bottom: 15px;
+    height: 100%;
     display: block;
     margin: auto;
 }
