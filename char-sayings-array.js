@@ -8,4 +8,4 @@ var charSays = [
 	"If I try and fail, I die. But 'tis better to to try and fail than to.... wait....",
 	"'Tis but a flesh wound!",
 	"You gotta fight for your right to Party!"
-]
+];
