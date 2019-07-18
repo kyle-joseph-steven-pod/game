@@ -44,7 +44,7 @@ body{
     color: #515151;
     /*position: relative;*/
     font-family: Majesti-Banner-light-italic;
-    font-size: 1.2em;
+    font-size: 1.1em;
 
 }
 #log-input{
@@ -55,8 +55,9 @@ body{
     max-height: 80%;
     padding-left: 7.5px;
     /*padding-bottom: 0px;*/
-    padding-top: 75px;
+    padding-top: 64px;
     line-height: 1.1em;
+    padding-bottom: 10px;
 }
 #log-output{
     padding: 0 5px;
@@ -94,7 +95,11 @@ body{
     width:30%;
     height: 100%;
     float: right;
-    border:5px double;
+    border:6px double;
+    border-left-color: #D9B363;
+    border-right-color: #D9B363;
+    border-top-color: black;
+    border-bottom-color: black;
 }
 #startScreen{
     position: absolute;

@@ -3,7 +3,19 @@ $("#log-form").submit(function(e){
 
     //Adds text to output log, reuse as possible for dialogue
     var pText = `<p class='output-p'><span class='output-arrow'>-></span>${$('#log-form-input').val()}</p>`;
-    // newestP = $("#log-output").children().last().scrollTop();
+
+    // Trying to make it where when text is entered in the input log and 'enter' is pressed, the input automatically clears itself //
+
+    // 'keydown input[type="text"]': function(event, template) {
+    //     if ((27 === event.which) || (13 === event.which)) {
+    //         event.preventDefault();
+    //         //this should delete value from the input
+    //         event.currentTarget.value = "";
+    //     }
+    // }
+
+    newestP = $("#log-output").children().last().scrollTop();
+
     //value is set to 99999999999 because i couldnt get the value of the bottom of scroll window so its a jank fix but it works
     $("#log-output").append(pText).scrollTop(9999999999999999);
 });
