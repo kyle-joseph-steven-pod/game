@@ -32,7 +32,7 @@ body{
     margin: 0;
     height: 65vh;
     background: url("Other-Art/bg-1.jpg");
-    opacity: 0.5;
+    opacity: 0.75;
     background-size: 300px;
 }
 #console{
@@ -170,4 +170,27 @@ body{
 }
 .centerBtn{
     margin-left: 36%;
+}
+#charBorder {
+    margin: 0;
+    height: 65vh;
+    position: fixed;
+    width: 1428px;
+    height: 497.25px;
+    /*border: 3px solid red;*/
+    background-color: transparent;
+}
+#charBox {
+    position: fixed;
+    border: 1px transparent;
+    border-radius: 60px;
+    padding: 30px;
+    top: 140px;
+    left: 140px;
+    width: 140px;
+    height: 140px;
+    background-image: url("pngs/Mischievous-Sprite/Mis-idle-Normalized.png");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
