@@ -130,11 +130,19 @@ body{
     margin-top: 55px;
 }
 #con-sprite{
+    margin-top: 15%;
+    min-height: 90%;
+    min-width: 100%;
+    width: 10px;
+    height: 10px;
     position: relative;
-    bottom: 15px;
-    height: 100%;
+    bottom: 15%;
     display: block;
-    margin: auto;
+    /*margin: auto;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(pngs/Mis-skull-fell-Normalized.png);
 }
 #control-buttons{
     height:20.5%;
@@ -148,7 +156,7 @@ body{
     margin-top: 4px;
     height: 55px;
     width: 100px;
-    bottom: 20px;
+    bottom: 75%;
     font-family: Chromaletter-Combo;
     font-size: 1.75em;
     font-weight: lighter;
@@ -156,4 +164,10 @@ body{
     text-align: center;
     box-shadow: -3px 3px 4px lightgrey;
     border: 3px outset;
+}
+.invis {
+    display: none;
+}
+.centerBtn{
+    margin-left: 36%;
 }

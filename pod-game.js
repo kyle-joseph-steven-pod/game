@@ -8,7 +8,7 @@
 //     $("#log-form").trigger("reset");
 //     $("#log-output").append(pText).scrollTop(9999999999999999);
 // });
-    //Adds text to output log, reuse as possible for dialogue
+//Adds text to output log, reuse as possible for dialogue
 
 // TODO Fight and Random talk quotes to be used elsewhere
 $("#button-fight").on("click",function(){
@@ -39,14 +39,14 @@ function flash() {
             count = 4;
         }
         count--;
-        $("#console-sprite").html(`<img id="con-sprite" src=${characters[count].poses.idle_1} alt="">`)
+        $('#con-sprite').css('background-image', 'url(' + characters[count].poses.right[0] + ')');
     });
     $("#button-run").on("click",function() {
         if(count === 3){
             count = -1;
         }
         count++;
-        $("#console-sprite").html(`<img id="con-sprite" src=${characters[count].poses.idle_1} alt="">`)
+        $('#con-sprite').css('background-image', 'url(' + characters[count].poses.right[0] + ')');
     });
     $("#button-fight").on("click",function(){
         elem.html("Choose Your Name");

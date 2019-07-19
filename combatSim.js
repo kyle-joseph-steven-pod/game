@@ -227,38 +227,38 @@ function fight(){
     // }
 
 
-var userClass = {
-    hp: 16,
-    strength: -1,
-    agility: 0,
-    sharp: 2,
-    presence: 1,
-    misses: 0,
-    damageDie: d4damage(),
-    scenes: 0,
-    spells:{
-        bolt: function twoD4DamRoller(){
-            var rolls1d4 = [1,2,3,4];
-            var h = Math.floor(Math.random() * 4);
-            // console.log(rolls1d6[h]);
-            var j = Math.floor(Math.random() * 4);
-            // console.log(rolls1d6[j]);
-            return (Number(rolls1d4[h]) + Number(rolls1d4[j]));
-        },
-        blast: function twoD6DamRoller(){
-            var rolls1d6 = [1,2,3,4,5,6];
-            var h = Math.floor(Math.random() * 6);
-            // console.log(rolls1d6[h]);
-            var j = Math.floor(Math.random() * 6);
-            // console.log(rolls1d6[j]);
-            return (Number(rolls1d6[h]) + Number(rolls1d6[j]));}
-    }};
-
-//bandit
-var badGuy = {
-    hp: 6,
-    mp: 3,
-    chase: -1,
-    damageDie: 6
-};
-
+// var userClass = {
+//     hp: 16,
+//     strength: -1,
+//     agility: 0,
+//     sharp: 2,
+//     presence: 1,
+//     misses: 0,
+//     damageDie: d4damage(),
+//     scenes: 0,
+//     spells:{
+//         bolt: function twoD4DamRoller(){
+//             var rolls1d4 = [1,2,3,4];
+//             var h = Math.floor(Math.random() * 4);
+//             // console.log(rolls1d6[h]);
+//             var j = Math.floor(Math.random() * 4);
+//             // console.log(rolls1d6[j]);
+//             return (Number(rolls1d4[h]) + Number(rolls1d4[j]));
+//         },
+//         blast: function twoD6DamRoller(){
+//             var rolls1d6 = [1,2,3,4,5,6];
+//             var h = Math.floor(Math.random() * 6);
+//             // console.log(rolls1d6[h]);
+//             var j = Math.floor(Math.random() * 6);
+//             // console.log(rolls1d6[j]);
+//             return (Number(rolls1d6[h]) + Number(rolls1d6[j]));}
+//     }};
+//
+// //bandit
+// var badGuy = {
+//     hp: 6,
+//     mp: 3,
+//     chase: -1,
+//     damageDie: 6
+// };
+//

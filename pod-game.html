@@ -7,6 +7,9 @@
 <!--    Materialize-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 
     <!--    custom styling-->
 
@@ -34,7 +37,7 @@
                 <h4 id="startScreen">Select Your Character</h4>
             </div>
             <div id="console-sprite">
-                <img id="con-sprite" src="pngs/Knight-Sprite/Kni-idle-Normalized.png" alt="">
+                <div id="con-sprite"></div>
             </div>
             <div id="control-buttons">
                 <button class="btn-large waves-effect red darken-4" id="button-talk"><<<</button>
@@ -45,8 +48,8 @@
     </div>
 
 </main>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="game-array.js"></script>
+<script src="animate.js"></script>
 <script src="pod-game.js"></script>
 <script src="char-sayings-array.js"></script>
 <script src="materialize/js/materialize.js"></script>

@@ -15,7 +15,7 @@ var characters = [
             talk: ["pngs/Knight-Sprite/Kni-Talk1-Normalized.png","pngs/Knight-Sprite/Kni-Talk2-Normalized.png"],
             attack: ["pngs/Knight-Sprite/Kni-attack-Normalized.png","pngs/Knight-Sprite/Kni-attackend-Normalized.png"],
             damaged: "pngs/Knight-Sprite/Kni-injured-Normalized.png",
-            death: ["pngs/Mis-skull-nNormalized.png","pngs/Mis-skull-fell-Normalized.png"],
+            death: ["pngs/Mis-skull-Normalized.png","pngs/Mis-skull-fell-Normalized.png"],
         },
         base_stats:{
             hp: 24,
@@ -39,7 +39,7 @@ var characters = [
             talk: ["pngs/Mischievous-Sprite/Mis-Talk1-Normalized.png","pngs/Mischievous-Sprite/Mis-Talk2-Normalized.png"],
             attack: ["pngs/Mischievous-Sprite/Mis-attack-Normalized.png","pngs/Mischievous-Sprite/Mis-attack-end-Normalized.png"],
             damaged: "pngs/Mischievous-Sprite/Mis-injured-Normalized.png",
-            death: ["pngs/Mis-skull-nNormalized.png","pngs/Mis-skull-fell-Normalized.png"],
+            death: ["pngs/Mis-skull-Normalized.png","pngs/Mis-skull-fell-Normalized.png"],
         },
         base_stats:{
             hp: 18,
@@ -54,7 +54,7 @@ var characters = [
         }
     },
     {
-        name: "Rouge",
+        name: "Rogue",
         poses: {
             idle_1: "pngs/Rogue-Sprite/Rog-idle-Normalized.png",
             idle_2: "",
@@ -63,7 +63,7 @@ var characters = [
             talk: ["pngs/Rouge-Sprite/Rog-talk1-Normalized.png","pngs/Rogue-Sprite/Rog-talk2-normalized.png"],
             attack: ["pngs/Rogue-Sprite/MRog-attack-Normalized.png","pngs/Rogue-Sprite/Rog-attackend-Normalized.png"],
             damaged: "pngs/Rogue-Sprite/Rog-injured-Normalized.png",
-            death: ["pngs/Mis-skull-nNormalized.png","pngs/Mis-skull-fell-Normalized.png"],
+            death: ["pngs/Mis-skull-Normalized.png","pngs/Mis-skull-fell-Normalized.png"],
         },
         base_stats:{
             hp: 20,
@@ -86,7 +86,7 @@ var characters = [
             right: ["pngs/Wizard-Sprite/Wiz-standing-normalized.png","pngs/Wizard-Sprite/Wiz-stepping-normalized.png"],
             attack: ["pngs/Wizard-Sprite/Wiz-attack-normalized.png","pngs/Wizard-Sprite/Wiz-attackend-normalized.png"],
             damaged: "pngs/Wizard-Sprite/Wiz-idle-normalized.png",
-            death: ["pngs/Mis-skull-nNormalized.png","pngs/Mis-skull-fell-Normalized.png"],
+            death: ["pngs/Mis-skull-Normalized.png","pngs/Mis-skull-fell-Normalized.png"],
         },
         base_stats:{
             hp: 16,
