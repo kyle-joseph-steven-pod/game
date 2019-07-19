@@ -1,22 +1,40 @@
 
 
-var pane = $('#charBorder'),
-	box = $('#charBox'),
-	w = pane.width() - box.width(),
-	d = {},
-	x = 3;
+var change = {
+	37: {
+		left: "-=1"
+	},
 
-function newv(v,a,b) {
-	var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
-	return n < 0 ? 0 : n > w ? w : n;
+	38: {
+		top: "-=1"
+	},
+
+	39: {
+		left: "+=1"
+	},
+
+	40: {
+		top: "+=1"
+	},
+};
+
+$(document).one("keydown", keyDown)
+
+var movement;
+
+function keyDown(e) {
+	console.log("down")
+	$(document).one("keyup", keyup)
+	var animation = change[e.which];
+	movement = setInterval(keepGoing, 1);
+
+	function keepGoing() {
+		$("#charBox").css(animation)
+	}
 }
 
-$(window).keydown(function(e) { d[e.which] = true; });
-$(window).keyup(function(e) { d[e.which] = false; });
-
-setInterval(function() {
-	box.css({
-		left: function(i,v) { return newv(v, 37, 39); },
-		top: function(i,v) { return newv(v, 38, 40); }
-	});
-}, 20);
+function keyup(e) {
+	console.log("up")
+	clearInterval(movement)
+	$(document).one("keydown", keyDown)
+}

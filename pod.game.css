@@ -183,13 +183,16 @@ body{
 }
 
 #charBox {
-    position: absolute;
+    position: fixed;
+    border: 1px transparent;
+    border-radius: 60px;
+    padding: 30px;
     top: 140px;
     left: 140px;
-    width: 175px;
-    height: 175px;
+    width: 140px;
+    height: 140px;
     background-image: url("pngs/Mischievous-Sprite/Mis-idle-Normalized.png");
     background-size: 100px 100px;
     background-repeat: no-repeat;
-    z-index: 1000;
+    z-index: 0;
 }
