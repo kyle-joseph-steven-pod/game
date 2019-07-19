@@ -53,6 +53,7 @@ function flash() {
     $("#button-select").on("click",function(){
         elem.html("Choose Your Name");
         $("#log-form").submit(function(e){
+
             let left =  $("#button-left");
             let select =  $("#button-select");
             let right =  $("#button-right");
@@ -69,6 +70,8 @@ function flash() {
                right.attr("id", "button-run");
             });
             elem.removeClass("flash");
+            part1();
+
 
         });
     });
