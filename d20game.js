@@ -1,102 +1,134 @@
 "use strict";
 
 
-(function() {
-
 //Below is the game start, ask if play
+//TODO - add part1() to the start button
 
-    answer(confirm("Hey there! Want to go on an adventure?"));
-function answer(a) {
-    if (a === false) {
-        alert("Okay! Have a great day!");
-    } else if (a === true){
-        alert("Let's get going, then!");
-        classPicker()
+
+    function part1() {
+        var pText = "<p class='output-p'><span class='output-arrow'>-></span>Hey there! Want to go on an adventure?</p>";
+        $("#log-output").append(pText).scrollTop(9999999999999999);
+        setTimeout(function () {
+            part2();
+        }, 4000); //4 seconds
     }
-}
+    function part2() {
+        var pText = "<p class='output-p'><span class='output-arrow'>-></span>Hey, you seem like a troublemaker. Lets make you a Mischievous.</p><p>Your stats are: Strength = 0, Agility = 1, Sharp = -1, and Presence = 2</p>";
+        $("#log-output").append(pText).scrollTop(9999999999999999);
+        setTimeout(function () {
+            part3();
+        }, 5000); //5 seconds
+    }
+    function part3() {
+        var pText = "<p class='output-p'><span class='output-arrow'>-></span>After the town of friendly chased you out with torches and pitchforks, you continue on your way through the woods to get to the city of Whoknowsville.</p>";
+        $("#log-output").append(pText).scrollTop(9999999999999999);
+        setTimeout(function () {
+            part4();
+        }, 5000); //5 seconds
+    }
+    function part4() {
+        var pText = "<p class='output-p'><span class='output-arrow'>-></span>*snap!* What was that? Hello? What do you do? Will you try to sneak past whatever is there? Type: AGI. Will you try to spot the danger before it strikes? Type: SHP. Or will you bellow out a challenge and rush into combat? Type: #bravebutfoolish.</p>";
+        $("#log-output").append(pText).scrollTop(9999999999999999);
+       //todo- add in event listener for the options listed. Myabe just use the code already build and use their input in the text bar?
+
+    }
+
+
+//
+//     answer(confirm("Hey there! Want to go on an adventure?"));
+// function answer(a) {
+//     if (a === false) {
+//         alert("Okay! Have a great day!");
+//     } else if (a === true){
+//         alert("Let's get going, then!");
+//         classPicker()
+//     }
+// }
+
+
 //Pick your class below:
-function classPicker() {
-    alert("Oh shit, It's an adventurer! Quick, everyone hide! They always bring trouble. It looks like it is an....");
-    var yourClass = (prompt("What kind of adventurer are you? A Washed Up Knight? An Incredibly Inept Wizard? Or a Noisy Thief?").toLowerCase());
-    switch (yourClass) {
-        case "washed up knight":
-            alert("Dope! You are a knight, sworn to defend the real from all manner of thing. Too bad married life caught up with you.");
-            var userClass = {
-                hp: 24,
-                strength: 2,
-                agility: -1,
-                sharp: 0,
-                presence: 1,
-                misses: 0,
-                damageDie: d10damage()
-            };
-            window.userClass = userClass;
-            alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
-            break;
-        case "incredibly inept wizard":
-            alert("Rad! You are a wizard of the high order! Too bad you have never actually casted a spell before...");
-            var userClass = {
-                hp: 16,
-                strength: -1,
-                agility: 0,
-                sharp: 2,
-                presence: 1,
-                misses: 0,
-                damageDie: d4damage(),
-                scenes: 0,
-                spells:{
-                    bolt: function twoD4DamRoller(){
-                        var rolls1d4 = [1,2,3,4];
-                        var h = Math.floor(Math.random() * 4);
-                        // console.log(rolls1d6[h]);
-                        var j = Math.floor(Math.random() * 4);
-                        // console.log(rolls1d6[j]);
-                        return (Number(rolls1d4[h]) + Number(rolls1d4[j]));
-                    },
-                    blast: function twoD6DamRoller(){
-                        var rolls1d6 = [1,2,3,4,5,6];
-                        var h = Math.floor(Math.random() * 4);
-                        // console.log(rolls1d6[h]);
-                        var j = Math.floor(Math.random() * 4);
-                        // console.log(rolls1d6[j]);
-                        return (Number(rolls1d6[h]) + Number(rolls1d6[j]));}
-                        }};
-            window.userClass = userClass;
-            alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
-            break;
-        case "noisy thief":
-            alert("Sweet! Your steps might not be as quiet as a cat on the prowl, but you sure can use your claws!.");
-            var userClass = {
-                hp: 20,
-                strength: 1,
-                agility: 2,
-                sharp: 0,
-                presence: -1,
-                misses: 0,
-                damageDie: d8damage(),
-                scenes: 0
-            };
-            window.userClass = userClass;
-            alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
-            break;
-        default:
-            alert("Hey, that wasn't an answer listed. Lets make you a Mischievous instead.");
-            var userClass = {
-                hp: 18,
-                strength: 0,
-                agility: 1,
-                sharp: -1,
-                presence: 2,
-                misses: 0,
-                damageDie: d6damage(),
-                scenes: 0
-            };
-            window.userClass = userClass;
-            alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
-            break;
-    }
-    sceneOne();
-}
+// function classPicker() {
+//     alert("Oh shit, It's an adventurer! Quick, everyone hide! They always bring trouble. It looks like it is an....");
+//     var yourClass = (prompt("What kind of adventurer are you? A Washed Up Knight? An Incredibly Inept Wizard? Or a Noisy Thief?").toLowerCase());
+//     switch (yourClass) {
+//         case "washed up knight":
+//             alert("Dope! You are a knight, sworn to defend the real from all manner of thing. Too bad married life caught up with you.");
+//             var userClass = {
+//                 hp: 24,
+//                 strength: 2,
+//                 agility: -1,
+//                 sharp: 0,
+//                 presence: 1,
+//                 misses: 0,
+//                 damageDie: d10damage()
+//             };
+//             window.userClass = userClass;
+//             alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
+//             break;
+//         case "incredibly inept wizard":
+//             alert("Rad! You are a wizard of the high order! Too bad you have never actually casted a spell before...");
+//             var userClass = {
+//                 hp: 16,
+//                 strength: -1,
+//                 agility: 0,
+//                 sharp: 2,
+//                 presence: 1,
+//                 misses: 0,
+//                 damageDie: d4damage(),
+//                 scenes: 0,
+//                 spells:{
+//                     bolt: function twoD4DamRoller(){
+//                         var rolls1d4 = [1,2,3,4];
+//                         var h = Math.floor(Math.random() * 4);
+//                         // console.log(rolls1d6[h]);
+//                         var j = Math.floor(Math.random() * 4);
+//                         // console.log(rolls1d6[j]);
+//                         return (Number(rolls1d4[h]) + Number(rolls1d4[j]));
+//                     },
+//                     blast: function twoD6DamRoller(){
+//                         var rolls1d6 = [1,2,3,4,5,6];
+//                         var h = Math.floor(Math.random() * 4);
+//                         // console.log(rolls1d6[h]);
+//                         var j = Math.floor(Math.random() * 4);
+//                         // console.log(rolls1d6[j]);
+//                         return (Number(rolls1d6[h]) + Number(rolls1d6[j]));}
+//                         }};
+//             window.userClass = userClass;
+//             alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
+//             break;
+//         case "noisy thief":
+//             alert("Sweet! Your steps might not be as quiet as a cat on the prowl, but you sure can use your claws!.");
+//             var userClass = {
+//                 hp: 20,
+//                 strength: 1,
+//                 agility: 2,
+//                 sharp: 0,
+//                 presence: -1,
+//                 misses: 0,
+//                 damageDie: d8damage(),
+//                 scenes: 0
+//             };
+//             window.userClass = userClass;
+//             alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
+//             break;
+//         default:
+//             alert("Hey, that wasn't an answer listed. Lets make you a Mischievous instead.");
+//             var userClass = {
+//                 hp: 18,
+//                 strength: 0,
+//                 agility: 1,
+//                 sharp: -1,
+//                 presence: 2,
+//                 misses: 0,
+//                 damageDie: d6damage(),
+//                 scenes: 0
+//             };
+//             window.userClass = userClass;
+//             alert("Your stats are: Strength = " + userClass.strength + ", Agility = " + userClass.agility + ", Sharp = " + userClass.sharp + ", and Presence = " + userClass.presence);
+//             break;
+//     }
+//     sceneOne();
+// }
 
 
 
@@ -190,7 +222,9 @@ function shitHitsFanSceneOne(){
         }
 
     }
-})();
-//Add:
+    function sceneTwo() {
+        alert("As you walk into the sunset, the screen fades to black. Thanks for trying the demo!");
+    }
+    //Add:
 // level up from misses total, make it XP
 // add +1 scene per scene traversed

@@ -36,7 +36,7 @@ body{
     background-size: 300px;
 }
 #console{
-    height: 35vh;
+    height: 32vh;
     /*border: 1px solid black;*/
     background: white;
 }
@@ -171,17 +171,15 @@ body{
 .centerBtn{
     margin-left: 36%;
 }
-
 #charBorder {
     margin: 0;
     height: 65vh;
-    position: relative;
+    position: fixed;
     width: 1428px;
     height: 497.25px;
     /*border: 3px solid red;*/
     background-color: transparent;
 }
-
 #charBox {
     position: fixed;
     border: 1px transparent;
