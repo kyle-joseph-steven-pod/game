@@ -131,12 +131,12 @@ body{
 }
 #con-sprite{
     margin-top: 15%;
-    min-height: 75%;
+    min-height: 90%;
     min-width: 100%;
     width: 10px;
     height: 10px;
     position: relative;
-    bottom: 15px;
+    bottom: 15%;
     display: block;
     /*margin: auto;*/
     background-size: contain;
@@ -156,7 +156,7 @@ body{
     margin-top: 4px;
     height: 55px;
     width: 100px;
-    bottom: 125%;
+    bottom: 75%;
     font-family: Chromaletter-Combo;
     font-size: 1.75em;
     font-weight: lighter;
@@ -164,4 +164,10 @@ body{
     text-align: center;
     box-shadow: -3px 3px 4px lightgrey;
     border: 3px outset;
+}
+.invis {
+    display: none;
+}
+.centerBtn{
+    margin-left: 36%;
 }
