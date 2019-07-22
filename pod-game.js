@@ -53,6 +53,7 @@ function flash() {
     $("#button-select").on("click",function(){
         elem.html("Choose Your Name");
         $("#log-form").submit(function(e){
+            $("#log-form").trigger("reset");
 
             let left =  $("#button-left");
             let select =  $("#button-select");
