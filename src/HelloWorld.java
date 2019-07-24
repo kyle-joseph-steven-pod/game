@@ -21,7 +21,25 @@ public class HelloWorld {
 //        myNumber = 3.14;
         myNumber = 123L;
         System.out.println(myNumber);
+//
+        myNumber = 123;
+        //NEEDS TO BE A DOUBLE FOR 3.14
+//
+//        float myNumber = 3.14;
+        //make the scope float,
+//
+        int x = 5;
+        System.out.println(x++);
+        System.out.println(x);
 
-
+//        int x = 5;
+//        System.out.println(++x);
+//        System.out.println(x);
+    //the position og the ++, on the second, it is in the place to increment.
+//        String class = "dogs";
+    //its a reserved word, cant use it to name a var.
+        String theNumberThree = "three";
+        Object o = theNumberThree;
+        int three = (int) o;
     }
 }
