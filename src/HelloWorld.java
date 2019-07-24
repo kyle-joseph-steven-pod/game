@@ -5,7 +5,10 @@ public static void main(String[] args) {
 
 //
     int myFavoriteNumber = 42;
-    System.out.print(myFavoriteNumber);
+    System.out.println(myFavoriteNumber);
+//
+    String myString = "Chocolate Devotion is the best ice cream at Coldstone";
+    System.out.println(myString);
 
 
 }
