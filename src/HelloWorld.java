@@ -35,9 +35,9 @@ public class HelloWorld {
 //        int x = 5;
 //        System.out.println(++x);
 //        System.out.println(x);
-    //the position of the ++, on the second makes it increment before the return, it is in the place to increment.
+        //the position of the ++, on the second makes it increment before the return, it is in the place to increment.
 //        String class = "dogs";
-    //its a reserved word, cant use it to name a var.
+        //its a reserved word, cant use it to name a var.
 
 
 //        String theNumberThree = "three";
@@ -46,7 +46,6 @@ public class HelloWorld {
 //    int three = (int) "three";
 
         //cutting the middleman, and object, not hidden in the obj. int cant be assigned a String
-
 
 
 //        int x = 4;
@@ -69,5 +68,4 @@ public class HelloWorld {
         System.out.println(max);
 //makes it a negative, "rolled over" to the min value
     }
-
 }
