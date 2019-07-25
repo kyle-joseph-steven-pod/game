@@ -35,7 +35,7 @@ public class HelloWorld {
 //        int x = 5;
 //        System.out.println(++x);
 //        System.out.println(x);
-    //the position og the ++, on the second, it is in the place to increment.
+    //the position of the ++, on the second makes it increment before the return, it is in the place to increment.
 //        String class = "dogs";
     //its a reserved word, cant use it to name a var.
 
@@ -45,23 +45,29 @@ public class HelloWorld {
 //        int three = (int) o;
 //    int three = (int) "three";
 
+        //cutting the middleman, and object, not hidden in the obj. int cant be assigned a String
+
 
 
 //        int x = 4;
 //        x += 5;
 //
 //        int x = 3;
-//        int y = 4 * x;
+//        int y = 4;
+//            y *= x;
 //
 //        int x = 10;
 //        int y = 2;
-//        x = x / y;
-//        y = y - x;
+//        x /= y;
+//        y -= x;
 //
-        //????
 
 // Java throws a fit
-
+        int max = Integer.MAX_VALUE;
+        System.out.println(max);
+        max++;
+        System.out.println(max);
+//makes it a negative, "rolled over" to the min value
     }
 
 }
