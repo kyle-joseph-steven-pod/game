@@ -45,50 +45,74 @@ public class ControlFlowExercises {
                 System.out.println("Fizz");
             } else System.out.println(f);
         }
-//      3
+
+        //      3
+//        System.out.println("What number would you like to go up to? ");
+//        int userInput = scanner.nextInt() + 1;
+//        System.out.println("Here is your table!");
+//        System.out.println("number | squared | cubed");
+//        System.out.println("------ | ------- | -----");
+//        for (int g = 1; g <= userInput; g += 1) {
+//            if (g == userInput) {
+//                break;
+//            } else {
+//                System.out.printf("%-7d|%-9d|%-8d%n", g, g * g, g * g * g);
+////                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
+//            }
+//
+//        }
+//        System.out.println("Would you like to continue? [y/n]");
+//        String answer = scanner.next();
+//        if (answer.equalsIgnoreCase("y")) {
+//            int newNum = userInput + 5;
+//            for (int g = userInput; g <= newNum + 1; g += 1) {
+//                if (g == newNum) {
+//                    break;
+//                } else {
+//                    System.out.printf("%-7d|%-9d|%-8d%n", g, g * g, g * g * g);
+//                    //                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
+//                }
+//
+//            }
+//
+//        } else {
+//            System.out.println("Cya!");
+
+        //        }
+        String answer = "n";
         System.out.println("What number would you like to go up to? ");
-        int userInput = scanner.nextInt()+1;
-        System.out.println("Here is your table!");
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        for (int g = 1; g <= userInput; g += 1) {
-            if (g == userInput) {
-                break;
-            } else {
-                System.out.printf("%-7d|%-9d|%-8d%n", g, g*g, g*g*g);
+        int userInput = scanner.nextInt() + 1;
+        do {
+
+            System.out.println("Here is your table!");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int g = 1; g <= userInput; g += 1) {
+                if (g == userInput) {
+                    break;
+                } else if (answer.equalsIgnoreCase("y")) {
+                    answer = "n";
+                    userInput += 5;
+                }
+                System.out.printf("%-7d|%-9d|%-8d%n", g, g * g, g * g * g);
 //                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
             }
+            System.out.println("Would you like to continue? [y/n]");
+            answer = scanner.next();
 
-        }
-        System.out.println("Would you like to continue? [y/n]");
-        String answer = scanner.next();
-        if (answer.equals("y")) {
-            int newNum = userInput + 5;
-            for (int g = userInput; g <= newNum+1; g += 1) {
-                if (g == newNum) {
-                    break;
-                } else {
-                    System.out.printf("%-7d|%-9d|%-8d%n", g, g*g, g*g*g);
-                    //                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
-                }
+        } while (answer.equalsIgnoreCase("y"));
 
-            }
-
-        } else {
-            System.out.println("Cya!");
-
-        }
 
 //        4
         System.out.println("Lets convert some grades! Enter in a number grade: ");
         int grade = scanner.nextInt();
         if (grade >= 88) {
             System.out.println("That's an A!");
-        } else if (grade >=80) {
+        } else if (grade >= 80) {
             System.out.println("That's a B!");
-        } else if (grade >=67) {
+        } else if (grade >= 67) {
             System.out.println("That's a C!");
-        } else if (grade >=60) {
+        } else if (grade >= 60) {
             System.out.println("That's a D!");
         } else {
             System.out.println("That's an F!");
