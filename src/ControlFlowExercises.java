@@ -30,7 +30,8 @@ public class ControlFlowExercises {
             System.out.println(c);
             c -= 5;
         }
-        for (double d = 2; d <= 1000000; d = Math.pow(d, 2)) {
+        for (double d = 2; d <= 1000000;
+             d = Math.pow(d, 2)) {
             System.out.println(d);
         }
 
@@ -46,27 +47,29 @@ public class ControlFlowExercises {
         }
 //      3
         System.out.println("What number would you like to go up to? ");
-        long userInput = scanner.nextInt()+1;
+        int userInput = scanner.nextInt()+1;
         System.out.println("Here is your table!");
         System.out.println("number | squared | cubed");
         System.out.println("------ | ------- | -----");
-        for (long g = 1; g <= userInput; g += 1) {
+        for (int g = 1; g <= userInput; g += 1) {
             if (g == userInput) {
                 break;
             } else {
-                System.out.println(g + "     | "+ (Math.pow(g, 2)) +"------ | "+ (Math.pow(g, 3)) +"----");
+                System.out.printf("%-7d|%-9d|%-8d%n", g, g*g, g*g*g);
+//                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
             }
 
         }
         System.out.println("Would you like to continue? [y/n]");
         String answer = scanner.next();
         if (answer.equals("y")) {
-            long newNum = userInput + 5;
-            for (long g = userInput; g <= newNum+1; g += 1) {
+            int newNum = userInput + 5;
+            for (int g = userInput; g <= newNum+1; g += 1) {
                 if (g == newNum) {
                     break;
                 } else {
-                    System.out.println(g + "     | "+ (Math.pow(g, 2)) +"------ | "+ (Math.pow(g, 3)) +"----");
+                    System.out.printf("%-7d|%-9d|%-8d%n", g, g*g, g*g*g);
+                    //                System.out.println(g + "      | "+ (Math.pow(g, 2)) +"       | "+ (Math.pow(g, 3)) +"    ");
                 }
 
             }
