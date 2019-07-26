@@ -117,6 +117,19 @@ public class ControlFlowExercises {
         } else {
             System.out.println("That's an F!");
         }
+//        switch (grade) {
+//            case (100-88):
+//                System.out.println("That's an A!");
+//            case (87-80):
+//                System.out.println("That's an A!");
+//            case (79-67):
+//                System.out.println("That's an A!");
+//            case (66||65||64||63||62||61||60):
+//                System.out.println("That's an A!");
+//            default:
+//                System.out.println("That's an A!");
+//
+//        }
 
 
     }
