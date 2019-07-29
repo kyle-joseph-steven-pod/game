@@ -58,6 +58,8 @@ public class MethodsExercises {
             int newNum = userAnswer;
             for (int i = 1; i <= counter; i++) {
                 userAnswer -= 1;
+                System.out.println("newNum = " + newNum);
+                System.out.println("userin = " +userAnswer);
                 newNum *= userAnswer;
                 if (i == userAnswer) {
                     System.out.println(newNum);
