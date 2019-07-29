@@ -72,6 +72,7 @@ public class MethodsExercises {
         }
     }
 
+
     //4
     public static void dice() {
         Scanner scanner = new Scanner(System.in);
