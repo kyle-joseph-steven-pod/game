@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -46,14 +47,14 @@ public class MethodsExercises {
             getInteger();
         }
     }
+
     //3
     public static void factoral() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter a number between 1 and 10: ");
         int userAnswer = scanner.nextInt();
         if (userAnswer <= 10 && userAnswer >= 1) {
-            System.out.println("Your number is: "+userAnswer);
+            System.out.println("Your number is: " + userAnswer);
             int counter = userAnswer;
             int newNum = userAnswer;
             for (int i = 1; i <= counter; i++) {
@@ -64,15 +65,34 @@ public class MethodsExercises {
                     return;
                 }
             }
-
         } else {
             System.out.println("Try again!");
             factoral();
-
         }
     }
 
+    //4
+    public static void dice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number of sides for a pair od dice: ");
+        int diceSides = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Roll the dice? [y/n] ");
+        String response = scanner.nextLine();
+        if (response.equals("y")) {
+            for (int i = 1; i <= 2; i++) {
+                int random = (int)(Math.random() * diceSides + 1);
+                System.out.println("Dice roll = "+random);
+            }
+        } else if (response.equals("n")) {
+            System.out.println("Cya!");
+        } else {
+            System.out.println("Try again!");
+            dice();
+        }
 
+
+    }
 
 
 
@@ -87,6 +107,8 @@ public class MethodsExercises {
         getInteger();
 
         factoral();
+
+        dice();
 
     }
 }
