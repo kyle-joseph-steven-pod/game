@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class MethodsExercises {
-    Scanner scanner = new Scanner(System.in);
 
     public static void times(int one, int two) {
 //        System.out.println( one * two);
@@ -33,10 +32,19 @@ public class MethodsExercises {
     }
 
     //2
-    public static int getInteger(int min, int max) {
+    public static void getInteger() {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter a number between 1 and 10: ");
-        scanner
-        int userInput = getInteger(1, 10);
+        int userInput = scanner.nextInt();
+
+        if (userInput >= 1 && userInput <= 10) {
+            System.out.println("That's a number between 1 and 10!");
+
+        } else {
+            System.out.println("Try again!");
+            getInteger();
+        }
     }
 
 
@@ -51,6 +59,6 @@ public class MethodsExercises {
         add(6, 3);
         modules(6, 3);
 
-        getInteger(1,10);
+        getInteger();
     }
 }
