@@ -46,6 +46,31 @@ public class MethodsExercises {
             getInteger();
         }
     }
+    //3
+    public static void factoral() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number between 1 and 10: ");
+        int userAnswer = scanner.nextInt();
+        if (userAnswer <= 10 && userAnswer >= 1) {
+            System.out.println("Your number is: "+userAnswer);
+            int counter = userAnswer;
+            int newNum = userAnswer;
+            for (int i = 1; i <= counter; i++) {
+                userAnswer -= 1;
+                newNum *= userAnswer;
+                if (i == userAnswer) {
+                    System.out.println(newNum);
+                    return;
+                }
+            }
+
+        } else {
+            System.out.println("Try again!");
+            factoral();
+
+        }
+    }
 
 
 
@@ -60,5 +85,8 @@ public class MethodsExercises {
         modules(6, 3);
 
         getInteger();
+
+        factoral();
+
     }
 }
