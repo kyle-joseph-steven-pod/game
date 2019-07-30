@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class gameTranslated {
+
+public class game_story {
     public static int dice(int side) {
         double roll = Math.ceil(Math.random() * side);
         return (int) roll;
@@ -13,6 +14,183 @@ public class gameTranslated {
     }
 
     static String userName;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+//Combat
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static double spellDamage() {
+        if (spellChoice === "bolt") {
+            int dam = userClass.spells.bolt();
+            return dam
+        } else {
+            var dam = userClass.spells.blast();
+            var damself = d4damage();
+            System.out.println("You hit your target, but that blast was brutal. You take " + damself + " damage from the blast.");
+            userClass.hp = userClass.hp - (damself);
+            return dam
+        }
+    }
+
+    public static void youDied() {
+        System.out.println("Though your journey has come to an end, lets see how far you got! You rolled " + userClass.misses + " misses and got through " + userClass.scenes + " scenes. Better luck next time!")
+    }
+
+//////////////////////////////////////////////////////////
+// TODO: 2019-07-30 - Below is hoe we will traverse scenes maybe:
+
+//    public static void nextScene() {
+//        if (userClass.scenes === 0){
+//            userClass.scenes += 1;
+//            System.out.println("You continue on through the woods and to the next encounter!");
+//            sceneTwo();
+//        } else if (userClass.scenes === 1){
+//            System.out.println("You continue on through the woods and to the next encounter!");
+//            sceneThree();
+//        } else if (userClass.scenes === 2){
+//            System.out.println("You continue on through the woods and to the next encounter!");
+//            sceneFour();
+//        }
+//    }
+////////////////////////////////////////////////////////
+
+    public static double combatTurnAttack() {
+        if (a <= 6) {
+            System.out.println("You rolled a miss! Oh no!");
+            userClass.misses = userClass.misses +1;
+            var badDam = baddieDam(badGuy.damageDie);
+            userClass.hp -= (badDam);
+            System.out.println("You take " + badDam + " damage from their blow!");
+            fight()
+        } else if (a > 6 && a < 10) {
+            System.out.println("You rolled a mixed success!");
+            var badDam = baddieDam(badGuy.damageDie);
+            var dam = userClass.damageDie;
+            userClass.hp -= (badDam);
+            badGuy.hp -= (dam);
+            System.out.println("You dealt " + dam + " damage, but you opened yourself up to an attack! Take " + badDam + " damage from their blow!");
+            fight()
+        } else if (a >= 10) {
+            System.out.println("You rolled a success with little consequence!");
+            var dam = userClass.damageDie;
+            badGuy.hp -= (dam);
+            System.out.println("You dealt " + dam + " damage!");
+            fight()
+        }
+    }
+    public static double combatTurnSpell() {
+        if (a <= 6) {
+            System.out.println("You rolled a miss! Oh no!");
+            userClass.misses += 1;
+            var badDam = baddieDam(badGuy.damageDie);
+            userClass.hp -= (badDam);
+            System.out.println("You take " + badDam + " damage from their blow!");
+            fight()
+        } else if (a > 6 && a < 10) {
+            System.out.println("You rolled a mixed success!");
+            var badDam = baddieDam(badGuy.damageDie);
+            var dam = spellDamage();
+            userClass.hp -= (badDam);
+            badGuy.hp -= (dam);
+            System.out.println("You dealt " + dam + " damage, but you opened yourself up to an attack! Take " + badDam + " damage from their blow!");
+            fight()
+        } else if (a >= 10) {
+            System.out.println("You rolled a success with little consequence!");
+            var dam = spellDamage();
+            badGuy.hp -= (dam);
+            System.out.println("You dealt " + dam + " damage!");
+            fight()
+        }
+    }
+    //Running
+    public static double combatTurnRun() {
+        if ((a - badGuy.chase) <= 6) {
+            alert("You rolled a miss! Oh no!");
+            userClass.misses += 1;
+            var badDam = baddieDam(badGuy.damageDie);
+            userClass.hp -= (badDam);
+            alert("You take " + badDam + " damage from their blow! and couldn't escape!");
+            fight()
+        } else if ((a - badGuy.chase)  > 6 && (a-badGuy.chase)  < 10) {
+            alert("You rolled a mixed success!");
+            var badDam = baddieDam(badGuy.damageDie);
+            var dam = userClass.damageDie;
+            userClass.hp -= (badDam);
+            var runChoice = (prompt("You only can do one: Make it away, but take a hit in the escape,  or stay in the fight and avoid the damage. Run or stay?")).toLowerCase();
+            if (runChoice === "run") {
+                var badDam = baddieDam(badGuy.damageDie);
+                userClass.hp -= (badDam * 2);
+                alert("You got away, but took " + badDam + " damage in the escape!");
+            } else {
+                var badDam = baddieDam(badGuy.damageDie);
+                userClass.hp -= (badDam - userClass.agility);
+                alert("You got away, but took " + badDam + " damage in the escape!");
+                fight()
+            }
+        } else if ((a - badGuy.chase) >= 10) {
+            alert("You rolled a success with little consequence!");
+            alert("You managed to escape the fight!");
+            nextScene()
+        }
+    }
+
+
+
+
+    //fighting
+    public static void fight(){
+        Scanner scanner = new Scanner(System.in);
+        //Dead
+        if (userClass.hp <= 0) {
+            System.out.println("Shit, you died!");
+            youDied();
+            return
+        } else if (badGuy.hp <= 0 || badGuy.mp <= 0) {
+            alert("You killed the baddie! Congrats!");
+            nextScene();
+        }
+//battle
+        System.out.println("You're in a fight for your life! What do you do? Run, Attack, or Talk?");).toLowerCase();
+        String everyBodyWas = scanner.nextLine();
+//melee
+        if (everyBodyWas === "attack") {
+            if (userClass.sharp === 2) {
+                var spellAttack =confirm("Would you like to attack or cast a spell?");
+                if (spellAttack === true) {
+                    var spellChoice = (prompt("What spell would you like to cast? Bolt or Blast?")).toLowerCase();
+                    window.spellChoice = spellChoice;
+                    alert("Let's see if your spell casted successfully");
+                    combatTurnSpell(twoD6PlusRoller() + userClass.sharp);
+                } } else {
+                var howAttack = (prompt("How do you fight? With dexterity and fast moves? = AGI Or do you fight with power and prowess? = STR ")).toLowerCase();
+            }
+            if(howAttack === "agi") {
+                combatTurnAttack(twoD6PlusRoller() + userClass.strength);
+            } else if (howAttack === "str") {
+                combatTurnAttack(twoD6PlusRoller() + userClass.agility);
+            }
+        }
+//run
+        else if(everyBodyWas === "run") {
+            combatTurnRun(twoD6PlusRoller() + userClass.agility);
+        }
+//talk
+        else if (everyBodyWas === "talk") {
+            var howAttack = (prompt("How do you talk them down? With quick thinking? = SHP Or with your charm and persuasion? = PRE ")).toLowerCase();
+            if(howAttack === "shp") {
+                combatTurnTalk(twoD6PlusRoller() + userClass.sharp);
+            } else if (howAttack === "pre") {
+                combatTurnTalk(twoD6PlusRoller() + userClass.presence);
+            }
+        }
+// mobs have Health points, Mental points, and Chase value
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+//Combat end
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
     //    Intro Section //////////////////////////////////////////////
     public static void intro() {
@@ -43,6 +221,8 @@ public class gameTranslated {
         private static int sharp;
         private static int presence;
         private static int damageDie;
+        private static int blast;
+        private static int bolt;
 
 
     }
@@ -96,6 +276,8 @@ public class gameTranslated {
                 character.sharp = 2;
                 character.presence = 1;
                 character.damageDie = 4;
+                character.blast;
+                character.bolt;
 
                 System.out.println("Your stats are: Strength = " + character.strength + ", Agility = " + character.agility + ", Sharp = " + character.sharp + ", and Presence = " + character.presence);
                 break;
@@ -196,8 +378,15 @@ public class gameTranslated {
             System.out.println(("You rolled a mixed success!");
             sceneOneBut();
         } else if (rolls.roll1 >= 10) {
-            System.out.println(("You rolled a success with little consequence!");
-            sceneOneSneaked();
+            System.out.println("You rolled a success with little consequence!");
+            System.out.println("You managed to sneak around their ambush. You can sneak away or get the jump on them. [fight/run]");
+            Scanner scanner = new Scanner(System.in);
+            choices.choice2 = scanner.nextLine();
+            if (choices.choice2.equalsIgnoreCase("fight")) {
+                Ambush();
+            } else {
+                sceneOneOutro();
+            }
         }
     }
 
@@ -212,13 +401,20 @@ public class gameTranslated {
             sceneOneBut();
         } else if (rolls.roll1 >= 10) {
             System.out.println("You rolled a success with little consequence!");
-            sceneOneSpottedEm();
+            System.out.println("You managed to spot them before they spotted you. You can sneak away or get the jump on them. [fight/run]");
+            Scanner scanner = new Scanner(System.in);
+            choices.choice2 = scanner.nextLine();
+            if (choices.choice2.equalsIgnoreCase("fight")) {
+                Ambush();
+            } else {
+                sceneOneOutro();
+            }
         }
     }
 
     //Scene 1 results
     public static void sceneOneBut() {
-        int dam = dice(6);
+        int dam = dice(baddie.damageDie);
         System.out.println("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
         character.hp -= dam;
         System.out.println("will you stand tall and fight? Or run like a coward?");
@@ -227,12 +423,12 @@ public class gameTranslated {
         if (choices.choice2.equalsIgnoreCase("fight")) {
             fight();
         } else {
-            sceneTwo();
+            sceneOneOutro();
         }
     }
 
     public static void shitHitsFanSceneOne() {
-        int dam = dice(8);
+        int dam = dice(baddie.damageDie);
         System.out.println("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
         character.hp -= dam;
         System.out.println("Oh no, here they come! You have no choice but to fight!");
@@ -240,10 +436,12 @@ public class gameTranslated {
     }
 
 
-    public static void sceneTwo() {
+    public static void sceneOneOutro() {
         System.out.println("As you walk into the sunset, the screen fades to black. Thanks for trying the demo!");
     }
 }
+
+
 
 //////Add:
 ////// level up from misses total, make it XP
