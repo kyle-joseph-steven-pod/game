@@ -133,6 +133,31 @@ public class game_story {
 //            change to nextScene in future
         }
     }
+    private static void combatTurnTalk(double a) {
+        if (a <= 6) {
+            System.out.println("You rolled a miss! Oh no!");
+            character.misses = character.misses + 1;
+            int badDam = dice(baddie.damageDie);
+            character.hp -= badDam;
+            System.out.println("You take " + badDam + " damage from their blow!");
+            fight();
+        } else if (a > 6 && a < 10) {
+            System.out.println("You rolled a mixed success!");
+            int badDam = dice(baddie.damageDie);
+            int dam = dice(character.damageDie) + character.sharp;
+            character.hp -= badDam;
+            baddie.mp -= dam;
+            System.out.println("Your words are getting to them! You dealt " + dam + " damage to their moral but you opened yourself up to an attack! Take " + badDam + " damage from their blow!");
+            fight();
+        } else if (a >= 10) {
+            System.out.println("You rolled a success with little consequence!");
+            int dam = dice(character.damageDie) + character.sharp;
+            baddie.mp -= dam;
+            System.out.println("Your words are getting to them! You dealt " + dam + " damage to their moral!");
+            fight();
+        }
+    }
+
 
 
     //fighting
@@ -187,6 +212,53 @@ public class game_story {
         }
 // mobs have Health points, Mental points, and Chase value
     }
+
+
+//////////////Ambushing gives you a +2 to your first roll
+    private static void Ambush() {
+        Scanner scanner = new Scanner(System.in);
+//battle
+        System.out.println("You're in a fight for your life! What do you do? Run, Attack, or Talk?");
+        String everyBodyWas = scanner.nextLine().toLowerCase();
+//melee
+        if (everyBodyWas.equalsIgnoreCase("attack")) {
+            if (character.sharp == 2) {
+                System.out.println("Would you like to attack or cast a spell? [y/n]");
+                String spellChoice = scanner.nextLine().toLowerCase();
+                if (spellChoice.equalsIgnoreCase("y")) {
+                    System.out.println("What spell would you like to cast? Bolt or Blast?");
+                    character.spell = scanner.nextLine().toLowerCase();
+                    System.out.println("Let's see if your spell casted successfully");
+                    combatTurnSpell(twoDice(6) + character.sharp +2);
+                }
+            } else {
+                System.out.println("How do you fight? With dexterity and fast moves? = AGI Or do you fight with power and prowess? = STR ");
+                String howAttack = scanner.nextLine().toLowerCase();
+                if (howAttack.equalsIgnoreCase("agi")) {
+                    combatTurnAttack(twoDice(6) + character.strength +2);
+                } else if (howAttack.equalsIgnoreCase("str")) {
+                    combatTurnAttack(twoDice(6) + character.agility +2);
+                }
+            }
+
+        }
+//run
+        else if (everyBodyWas.equalsIgnoreCase("run")) {
+            combatTurnRun(twoDice(6) + character.agility +2);
+        }
+//talk
+        else if (everyBodyWas.equalsIgnoreCase("talk")) {
+            System.out.println("How do you talk them down? With quick thinking? = SHP Or with your charm and persuasion? = PRE ");
+            String howAttack = scanner.nextLine().toLowerCase();
+            if (howAttack.equalsIgnoreCase("shp")) {
+                combatTurnTalk(twoDice(6) + character.sharp +2);
+            } else if (howAttack.equalsIgnoreCase("pre")) {
+                combatTurnTalk(twoDice(6) + character.presence +2);
+            }
+        }
+// mobs have Health points, Mental points, and Chase value
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 //Combat end
