@@ -1,15 +1,17 @@
 import java.util.Scanner;
 
 public class gameTranslated {
-    public static int dice(int side){
+    public static int dice(int side) {
         double roll = Math.ceil(Math.random() * side);
-        return (int)roll;
+        return (int) roll;
     }
-    public static double twoDice(int side){
+
+    public static double twoDice(int side) {
         double rollOne = Math.ceil(Math.random() * side);
         double rollTwo = Math.ceil(Math.random() * side);
         return (rollOne + rollTwo);
     }
+
     static String userName;
 
     //    Intro Section //////////////////////////////////////////////
@@ -54,6 +56,11 @@ public class gameTranslated {
 
     private static class rolls {
         private static double roll1;
+    }
+
+    private static class choices {
+        private static String choice1;
+        private static String choice2;
     }
 
 
@@ -157,34 +164,31 @@ public class gameTranslated {
         System.out.println("After the town of friendly chased you out with torches and pitchforks, you continue on your way through the woods to get to the city of Whoknowsville.");
         System.out.println("*snap!* What was that? Hello? What do you do? Will you try to sneak past whatever is there? Type: AGI. Will you try to spot the danger before it strikes? Type: SHP. Or will you bellow out a challenge and rush into combat? Type: #bravebutfoolish.");
 
-        String s1ChoiceOne = scanner.nextLine().toLowerCase();
-        switch (s1ChoiceOne) {
+        choices.choice1 = scanner.nextLine().toLowerCase();
+        switch (choices.choice1) {
             case "agi":
                 System.out.println("As you try to be sneaky, we will roll to see what happens.");
                 rolls.roll1 = twoDice(6) + character.agility;
+                System.out.println("You rolled a " + rolls.roll1 + ". Lets see what they means for our adventurer...");
+                agiSceneOne();
                 break;
             case "shp":
                 System.out.println("As you try spot the danger before it has the jump on you, we will roll to see what happens.");
                 rolls.roll1 = twoDice(6) + character.sharp;
+                System.out.println("You rolled a " + rolls.roll1 + ". Lets see what they means for our adventurer...");
+                shpSceneOne();
                 break;
             default:
                 System.out.println("Shit, you made a lot of noise! Here they come....");
+                shitHitsFanSceneOne();
                 break;
         }
-        //scene 1 results
-        if (s1ChoiceOne.contentEquals("agi")) {
-            System.out.println("You rolled a " + rolls.roll1 + ". Lets see what they means for our adventurer...");
-            agiSceneOne(rolls.roll1);
-        } else if (s1ChoiceOne.contentEquals("shp")) {
-            System.out.println("You rolled a " + rolls.roll1 + ". Lets see what they means for our adventurer...");
-            shpSceneOne(rolls.roll1);
-        } else {
-            shitHitsFanSceneOne();
-        }
-///////////////////////////////////////////////////////Left off here
+    }
+
+    ///////////////////////////////////////////////////////Left off here
 //Scene 1 agi approach
-        public static void agiSceneOne() {
-            if (rolls.roll1 <= 6) {
+    public static void agiSceneOne() {
+        if (rolls.roll1 <= 6) {
             System.out.println("You rolled a miss! Oh no!");
             character.misses += 1;
             shitHitsFanSceneOne();
@@ -197,46 +201,47 @@ public class gameTranslated {
         }
     }
 
-//Scene 1 shp approach
-        function shpSceneOne (a) {
-        if (a <= 6) {
-            alert("You rolled a miss! Oh no!");
-            userClass.misses = userClass.misses + 1;
-            shitHitsFanSceneOne()
-        } else if (a > 6 && a < 10) {
-            alert("You rolled a mixed success!");
-            sceneOneBut()
-        } else if (a >= 10) {
-            alert("You rolled a success with little consequence!");
-            sceneOneSpottedEm()
+    //Scene 1 shp approach
+    public static void shpSceneOne() {
+        if (rolls.roll1 <= 6) {
+            System.out.println("You rolled a miss! Oh no!");
+            character.misses += 1;
+            shitHitsFanSceneOne();
+        } else if (rolls.roll1 > 6 && rolls.roll1 < 10) {
+            System.out.println("You rolled a mixed success!");
+            sceneOneBut();
+        } else if (rolls.roll1 >= 10) {
+            System.out.println("You rolled a success with little consequence!");
+            sceneOneSpottedEm();
         }
-        }
-
-//Scene 1 results
-        function sceneOneBut () {
-            var dam = d6damage();
-            alert("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
-            userClass.hp = userClass.hp - dam;
-            var maybefight = (prompt("will you stand tall and fight? Or run like a coward?")).toLowerCase();
-            if (maybefight == = "fight") {
-                fight();
-            } else {
-                sceneTwo()
-            }
-        }
-        function shitHitsFanSceneOne () {
-            var dam = d6damage();
-            alert("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
-            userClass.hp = userClass.hp - dam;
-            alert("Oh no, here they come! You have no choice but to fight!");
-            fight()
-        }
-
     }
 
-    function sceneTwo() {
-        alert("As you walk into the sunset, the screen fades to black. Thanks for trying the demo!");
+    //Scene 1 results
+    public static void sceneOneBut() {
+        int dam = dice(6);
+        System.out.println("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
+        character.hp -= dam;
+        System.out.println("will you stand tall and fight? Or run like a coward?");
+        Scanner scanner = new Scanner(System.in);
+        choices.choice2 = scanner.nextLine().toLowerCase();
+        if (choices.choice2.equalsIgnoreCase("fight")) {
+            fight();
+        } else {
+            sceneTwo();
+        }
+    }
 
+    public static void shitHitsFanSceneOne() {
+        int dam = dice(8);
+        System.out.println("Fuuuuuuck. That hurt. Their trap was tripped, hitting you for " + dam + " damage and they are coming right for you!");
+        character.hp -= dam;
+        System.out.println("Oh no, here they come! You have no choice but to fight!");
+        fight();
+    }
+
+
+    public static void sceneTwo() {
+        System.out.println("As you walk into the sunset, the screen fades to black. Thanks for trying the demo!");
     }
 }
 
