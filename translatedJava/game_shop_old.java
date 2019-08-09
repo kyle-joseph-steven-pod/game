@@ -1,7 +1,7 @@
 import java.util.Scanner;
 //TODO: add sout to each item bought.
 
-public class game_shop {
+public class game_shop_old {
 
     private int sceneCounter = 0;
     public static int partiesHad;
@@ -35,10 +35,10 @@ public class game_shop {
     }
 
     public static void sleep() {
-        int healed = game_story.character.maxHP / 2;
-        game_story.character.hp += healed;
-        if (game_story.character.hp > game_story.character.maxHP) {
-            game_story.character.hp = game_story.character.maxHP;
+        int healed = game_story_old.character.maxHP / 2;
+        game_story_old.character.hp += healed;
+        if (game_story_old.character.hp > game_story_old.character.maxHP) {
+            game_story_old.character.hp = game_story_old.character.maxHP;
         }
         System.out.println("You get some much needed rest. You heal " + healed + " HP before you head on out to the next stop on your journey!");
     }
@@ -104,7 +104,7 @@ public class game_shop {
             case "mail":
                 if (3 > Items.gold) {
                     System.out.println("Hey! You don't have enough gold! Pick something else.");
-                } else if (game_story.character.strength < 2) {
+                } else if (game_story_old.character.strength < 2) {
                     System.out.println("Hey! You're not strong enough to use that! Pick something else.");
                 } else{
                     Items.gold -= 3;
@@ -145,7 +145,7 @@ public class game_shop {
             case "scroll":
                 if (2 > Items.gold) {
                     System.out.println("Hey! You don't have enough gold! Pick something else.");
-                } else if (game_story.character.sharp < 2) {
+                } else if (game_story_old.character.sharp < 2) {
                     System.out.println("Hey! You're not smart enough to use that! Pick something else.");
                 } else{
                     Items.gold -= 2;
@@ -200,95 +200,95 @@ public class game_shop {
         String spendXP = scanner.nextLine().toLowerCase();
         switch (spendXP) {
             case "str":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
-                } else if (2 >= game_story.character.strength) {
+                } else if (2 >= game_story_old.character.strength) {
                     System.out.println("Hey! Your stat is already capped out! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.strength += 1;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.strength += 1;
                 }
                 break;
             case "agi":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
-                } else if (2 >= game_story.character.agility) {
+                } else if (2 >= game_story_old.character.agility) {
                     System.out.println("Hey! Your stat is already capped out! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.agility += 1;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.agility += 1;
                 }
                 break;
             case "shp":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
-                } else if (2 >= game_story.character.sharp) {
+                } else if (2 >= game_story_old.character.sharp) {
                     System.out.println("Hey! Your stat is already capped out! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.sharp += 1;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.sharp += 1;
                 }
                 break;
             case "pre":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
-                } else if (2 >= game_story.character.presence) {
+                } else if (2 >= game_story_old.character.presence) {
                     System.out.println("Hey! Your stat is already capped out! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.presence += 1;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.presence += 1;
                 }
                 break;
 //
             case "hp":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.maxHP += 3;
-                    game_story.character.hp += 3;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.maxHP += 3;
+                    game_story_old.character.hp += 3;
                 }
                 break;
             case "energy":
-                if (2 > game_story.character.xp) {
+                if (2 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 2;
-                    game_story.character.energy += 1;
-                    game_story.character.maxEnergy += 1;
+                    game_story_old.character.xp -= 2;
+                    game_story_old.character.energy += 1;
+                    game_story_old.character.maxEnergy += 1;
                 }
                 break;
 
             case "move":
-                if (3 > game_story.character.xp) {
+                if (3 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
-                } else if (3 >= game_story.character.moveLevel) {
+                } else if (3 >= game_story_old.character.moveLevel) {
                     System.out.println("Hey! You already bought all of these! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 3;
-                    game_story.character.moveLevel += 1;
+                    game_story_old.character.xp -= 3;
+                    game_story_old.character.moveLevel += 1;
                 }
                 break;
 
             case "roll":
-                if (1 > game_story.character.xp) {
+                if (1 > game_story_old.character.xp) {
                     System.out.println("Hey! You don't have enough XP! Pick something else.");
                     level();
                 } else {
-                    game_story.character.xp -= 1;
-                    game_story.character.bonusForward += 1;
+                    game_story_old.character.xp -= 1;
+                    game_story_old.character.bonusForward += 1;
                 }
                 break;
             case "town":
@@ -317,7 +317,7 @@ public class game_shop {
                     "\nBarroom Blitz (Costs 1 Gold, +0 to Party roll) [blitz]" +
                     "\nStreet-wide Mosh Pit (Costs 2 Gold, +1 to Party roll) [street]" +
                     "\nParty Rockin in the Big House (Costs 3 Gold, +2 to Party roll) [rock]" +
-                    "\nA Rager of a Lifetime (Costs 4 Gold, +3 to Party roll) [rager]" +
+                    "\nA Rager_old of a Lifetime (Costs 4 Gold, +3 to Party roll) [rager]" +
                     "\nAll-nighter (Costs  2 Gold, +0 to this Party roll & roll for a second Party) [night]\n" +
                     "\nType [town] to head back to the main menu.\n");
             String wOoOo = scanner.nextLine().toLowerCase();
@@ -328,8 +328,8 @@ public class game_shop {
                         party();
                     } else {
                         Items.gold -= 1;
-                        Rager.partyBonus = 0;
-                        Rager.rager();
+                        Rager_old.partyBonus = 0;
+                        Rager_old.rager();
                     }
                     break;
                 case "street":
@@ -338,8 +338,8 @@ public class game_shop {
                         party();
                     } else {
                         Items.gold -= 2;
-                        Rager.partyBonus += 1;
-                        Rager.rager();
+                        Rager_old.partyBonus += 1;
+                        Rager_old.rager();
                     }
 
                     break;
@@ -349,8 +349,8 @@ public class game_shop {
                         party();
                     } else {
                         Items.gold -= 3;
-                        Rager.partyBonus += 2;
-                        Rager.rager();
+                        Rager_old.partyBonus += 2;
+                        Rager_old.rager();
                     }
                     break;
                 case "rager":
@@ -359,8 +359,8 @@ public class game_shop {
                         party();
                     } else {
                         Items.gold -= 4;
-                        Rager.partyBonus += 3;
-                        Rager.rager();
+                        Rager_old.partyBonus += 3;
+                        Rager_old.rager();
                     }
                     break;
                 case "night":
@@ -369,9 +369,9 @@ public class game_shop {
                         party();
                     } else {
                         Items.gold -= 2;
-                        Rager.partyBonus = 0;
-                        Rager.allNighter = 1;
-                        Rager.rager();
+                        Rager_old.partyBonus = 0;
+                        Rager_old.allNighter = 1;
+                        Rager_old.rager();
                     }
                     break;
                 case "town":

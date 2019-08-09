@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class game_story {
+public class game_story_old {
     public static void main(String[] args) {
         intro();
     }
@@ -406,7 +406,7 @@ public class game_story {
 
 
     private static void sceneOneOutro() {
-        game_shop.town();
+        game_shop_old.town();
         System.out.println(
                 "\nAs you walk into the sunset, \n" +
                         "the screen fades to black... \n\n" +
@@ -612,7 +612,7 @@ public class game_story {
             youDied();
         } else if (baddie.hp <= 0 || baddie.mp <= 0) {
             System.out.println("\nYou defeated the baddie! Congrats!\n" +
-                    "You got " + game_story.dice(baddie.damageDie) + " gold from them\n");
+                    "You got " + game_story_old.dice(baddie.damageDie) + " gold from them\n");
             sceneOneOutro();
         }
 //battle
