@@ -71,7 +71,7 @@ function flash() {
                right.attr("id", "button-run");
             });
             elem.removeClass("flash");
-            part1();
+            // part1();
 
 
         });
