@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class game_story {
+public class GameStory {
     public static void main(String[] args) {
         intro();
     }
